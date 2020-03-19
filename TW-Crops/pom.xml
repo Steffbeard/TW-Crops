@@ -1,34 +1,15 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-                      http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>1.0.0</modelVersion>
-  <groupId>com.untamedears</groupId>
-  <artifactId>TW-Crops</artifactId>
-  <packaging>jar</packaging>
-  <version>1.0.0</version>
-  <name>TW-Crops</name>
-  <url>https://github.com/Steffbeard/TW-Crops</url>
-  
-  <properties>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.steffbeard.totalwar</groupId>
+  <artifactId>crops</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+<properties>
     <maven.compiler.source>1.8</maven.compiler.source>
     <maven.compiler.target>1.8</maven.compiler.target>
     <build.number>SNAPSHOT</build.number>
   </properties>
   
   <build>
-    <sourceDirectory>${basedir}/src</sourceDirectory>
-    
-    <resources>
-      <resource>
-        <directory>${basedir}</directory>
-        <includes>
-          <include>**/*.java</include>
-          <include>*.yml</include>
-        </includes>
-		<filtering>true</filtering>
-      </resource>
-    </resources>
 	<plugins>
 		<plugin>
 			<groupId>org.apache.maven.plugins</groupId>
@@ -55,32 +36,58 @@
 		</plugin>
 	</plugins>
   </build>
-
+  
   <dependencies>
-    <dependency>
-      <groupId>org.spigotmc</groupId>
-      <artifactId>spigot</artifactId>
-      <version>1.12-R0.1-SNAPSHOT</version>
-      <scope>provided</scope>
-	</dependency>
-    <dependency>
-      <groupId>com.zaxxer</groupId>
-      <artifactId>HikariCP</artifactId>
-      <version>2.6.2</version>
-      <scope>compile</scope>
-    </dependency>
+  	<!-- https://mvnrepository.com/artifact/org.avaje/ebean -->
 	<dependency>
-  	  <groupId>org.avaje.ebeanorm</groupId>
-  	  <artifactId>avaje-ebeanorm</artifactId>
-  	  <version>4.4.1</version>
+    	<groupId>org.avaje</groupId>
+    	<artifactId>ebean</artifactId>
+    	<version>2.7.3</version>
 	</dependency>
+    <!--Spigot API -->
+	<dependency>
+		<groupId>org.spigotmc</groupId>
+		<artifactId>spigot-api</artifactId>
+		<version>1.12.2-R0.1-SNAPSHOT</version>
+		<scope>provided</scope>
+	</dependency>
+	<!--Spigot Jar -->
+	<dependency>
+		<groupId>org.spigotmc</groupId>
+		<artifactId>spigot</artifactId>
+		<version>1.12.2</version>
+		<scope>system</scope>
+		<systemPath>${project.basedir}/libs/spigot-1.12.2.jar</systemPath>
+	</dependency>
+	<!--Bukkit API -->
+	<dependency>
+		<groupId>org.bukkit</groupId>
+		<artifactId>bukkit</artifactId>
+		<version>1.12.2-R0.1-SNAPSHOT</version>
+		<scope>provided</scope>
+	</dependency>
+        <!-- HikariCP -->
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+            <version>2.4.7</version>
+            <scope>compile</scope>
+        </dependency>
+        <!-- Javassist -->
+        <dependency>
+            <groupId>org.javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.20.0-GA</version>
+        </dependency>
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.7.21</version>
+        </dependency>
   </dependencies>
   
   <repositories>
-    <repository>
-      <id>bukkit-repo</id>
-      <url>http://repo.bukkit.org/content/groups/public/</url>
-    </repository>
     <repository>
       <id>spigot-repo</id>
       <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>

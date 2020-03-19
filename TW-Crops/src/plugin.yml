@@ -1,6 +1,0 @@
-name: TW-Crops
-main: com.untamedears.realisticbiomes.RealisticBiomes
-load: STARTUP
-version: 1.0.0
-authors: [mgrandi, gispy-king, jacobcole2000, WildWeazel, ProgrammerDan, Numrufus, Erocs, danquist, pruby, Maxopoly, BlackXnt, zune, Steffbeard]
-description: RealisticBiomes makes farming harder by limiting growth rates of crops and making them only grow well in certain biomes. Converted to 1.12.2 by zune under the new name TW-Crops for use on TW's economy system
